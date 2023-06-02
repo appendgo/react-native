@@ -1,6 +1,9 @@
 # React-Native
 
-* [Installation](installation/GENERAL.MD)
+* Installation
+  * [General](installation/GENERAL.MD)
+  * [Android](installation/ANDROID.MD)
+  * [iOS](installation/IOS.MD)
 * Core concepts
 * Best practices
 * Best packages
