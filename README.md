@@ -1,5 +1,11 @@
 # React-Native
 
+#### This is the Wiki page of Appendgo Kft.'s React-Native development department. <img height="80" style="float:left" src="https://user-images.githubusercontent.com/645053/236628029-2b639e90-a9a2-40f1-ba2d-8d77181ae27a.png">
+
+Mobile Application development: **hello@appendgo.com**
+
+## Content
+
 * Installation
   * [General](installation/GENERAL.MD)
   * [Android](installation/ANDROID.MD)
@@ -8,9 +14,6 @@
 * Best practices
 * Best packages
 
-#### This is the Wiki page of Appendgo Kft.'s React-Native development department. <img height="80" style="float:left" src="https://user-images.githubusercontent.com/645053/236628029-2b639e90-a9a2-40f1-ba2d-8d77181ae27a.png">
-
-Mobile Application development: **hello@appendgo.com**
 
 # Guidelines
 
