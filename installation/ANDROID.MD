@@ -10,7 +10,7 @@
 
 ### Download Android Studio
 
-* Download Android Studio from https://developer.android.com/studio
+* Download Android Studio from [https://developer.android.com/studio](https://developer.android.com/studio)
 * Standard install
 
 ### Open an existing Project in Android Studio
