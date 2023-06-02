@@ -1,4 +1,4 @@
-# General
+# Installation / General
 
 ## Homebrew install
 
