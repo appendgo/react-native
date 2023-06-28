@@ -13,6 +13,8 @@ Mobile Application development: **hello@appendgo.com**
 * Core concepts
 * Best practices
 * Best packages
+* Deployment
+  * [iOS](deploy/IOS.MD)
 
 
 # Guidelines
