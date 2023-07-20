@@ -17,9 +17,11 @@ VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=dbaeume
 
 #### Prettier ESLint
 
+```
 Name: Prettier ESLint
 Id: rvest.vs-code-prettier-eslint
 Description: A Visual Studio Extension to format JavaScript and Typescript code using prettier-eslint package
 Version: 5.1.0
 Publisher: Rebecca Vest
 VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=rvest.vs-code-prettier-eslint
+```
