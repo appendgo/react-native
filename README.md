@@ -10,6 +10,7 @@ Mobile Application development: **hello@appendgo.com**
   * [General](installation/GENERAL.MD)
   * [Android](installation/ANDROID.MD)
   * [iOS](installation/IOS.MD)
+  * [VSCode](installation/VSCODE.MD)
 * Core concepts
 * Best practices
 * Best packages
