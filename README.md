@@ -12,7 +12,7 @@ Mobile Application development: **hello@appendgo.com**
   * [iOS](installation/IOS.MD)
   * [VSCode](installation/VSCODE.MD)
 * Core concepts
-* Best practices
+* [Best practices](main/BEST-PRACTICES.MD)
 * Best packages
 * Deployment
   * [iOS](deploy/IOS.MD)
