@@ -1,4 +1,20 @@
 
+# file nevek specifikusak es egyertelmuen leiroak legyenek
+
+* **Bad examples**
+
+* 
+
+* **Good examples**
+
+* 
+
+## leiras
+
+* Peldaul van tobb `fetchClientsAction`-unk a projektben, amik kulonbozokeppen kerik le a client-eket.
+  * Ebben az esetben mindegyik `fetchClientsAction`-be tegyuk bele azt a screen vagy modul nevet ahova o tartozik!
+
+
 # prop-kent osztalyszintu arrow function adjunk
 
 * Don't use inline functions
@@ -75,6 +91,42 @@ const  mapStoreToProps  =  store  => ({
   storeIsEmptyTransactions:
     store.transaction.transactions.data  ===  null  ||
     store.transaction.transactions.data.length  ===  0,
+});
+```
+
+# Reselect library hasznalat
+
+* Kalkulalt ertekek eseteben erdemes hasznalni, pl: `map`, `filter`
+* Azert, hogy ezek a kalkulaciok ne fussanak le minden rendernel, csak abban az esetben, ha megvaltoznak a parameterek amelyekbol szamoljuk oket.
+
+```
+const selectFilteredClientData = createSelector(
+  store => store.appointment.client.clients.searchText,
+  store => store.appointment.client.clients.data,
+  (searchText, clientData) =>
+    clientData.filter(item => {
+      let hit = !searchText;
+
+      if (!hit && item.name) {
+        hit = normalizeString(item.name).match(new RegExp(searchText, 'gi'));
+      }
+
+      if (!hit && item.email) {
+        hit = normalizeString(item.email).match(new RegExp(searchText, 'gi'));
+      }
+
+      if (!hit && item.phone) {
+        hit = normalizeString(item.phone).match(new RegExp(searchText, 'gi'));
+      }
+
+      return hit;
+    }),
+);
+
+const mapStoreToProps = store => ({
+  filteredClientData: selectFilteredClientData(store),
+  selectedClient: store.appointment.client.selectedClient,
+  employeeId: store.appointment.employeeId,
 });
 ```
 
