@@ -14,6 +14,7 @@ Mobile Application development: **hello@appendgo.com**
 * Core concepts
 * [Code style](main/CODE-STYLE.MD)
 * [Best practices](main/BEST-PRACTICES.MD)
+* [Troubleshooting](main/TROUBLESHOOTING.MD)
 * Best packages
 * Deployment
   * [iOS](deploy/IOS.MD)
