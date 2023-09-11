@@ -17,6 +17,6 @@ Mobile Application development: **hello@appendgo.com**
 * [Troubleshooting](main/TROUBLESHOOTING.MD)
 * Best packages (later)
 * Deployment
-  * [iOS](deploy/IOS.MD)
+  * [Android](deploy/ANDROID.MD)
 
 
