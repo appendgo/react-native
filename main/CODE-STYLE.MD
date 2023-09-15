@@ -18,3 +18,7 @@ Cel: Fentrol lefele sorrendben rendezzuk a metodusokat
 4. render
 5. renderXY
 6. egyeb metodusok
+
+# Export default
+
+Alapbol a class soraban legyen, kiveve persze ha Redux connect-et hasznalunk
