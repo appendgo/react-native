@@ -1,6 +1,0 @@
-# iOS
-
-* a
-* b
-
-# Android
