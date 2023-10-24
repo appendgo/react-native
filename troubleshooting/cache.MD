@@ -1,0 +1,8 @@
+# iOS
+
+* a
+* derivedData
+
+# Android
+
+* ...
