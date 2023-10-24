@@ -18,5 +18,7 @@ Mobile Application development: **hello@appendgo.com**
 * Best packages (later)
 * Deployment
   * [Android](deploy/ANDROID.MD)
+* Marketplace
+  * [Huawei](marketplace/HUAWEI.MD)
 
 
