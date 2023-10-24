@@ -15,6 +15,7 @@ Mobile Application development: **hello@appendgo.com**
 * [Code style](main/CODE-STYLE.MD)
 * [Best practices](main/BEST-PRACTICES.MD)
 * [Troubleshooting](main/TROUBLESHOOTING.MD)
+  * [Cache](troubleshooting/cache.MD) 
 * Best packages (later)
 * Deployment
   * [Android](deploy/ANDROID.MD)
