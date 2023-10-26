@@ -21,7 +21,7 @@ Mobile Application development: **hello@appendgo.com**
     * [CodePush Android](installation/CODEPUSH-ANDROID.MD) 
 * **Deployment**
   * [iOS](deployment/DEPLOYIOS.MD)
-  * [Android](deployment/DEPOYANDROID.MD)
+  * [Android](deployment/DEPLOYANDROID.MD)
 * **Marketplace**
   * [Huawei](marketplace/HUAWEI.MD)
 * **Troubleshooting**
