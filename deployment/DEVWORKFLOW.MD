@@ -23,6 +23,7 @@
 3. **Review Preparation**:
    - Once the developer believes the work is complete, they merge the `staging` branch into their feature branch to ensure it's up-to-date.
    - The issue is then moved to the `Review & Test` column on the Kanban board.
+   - Send the Pull Request link into the proper Slack channel.
 
 4. **Review & Merging**:
    - After code review and testing are passed, the feature branch is merged into the `staging` branch.
@@ -38,6 +39,7 @@
 
 3. **Review & Merging**:
    - Once ready, a PR is opened to merge the `hotfix` branch into `master`.
+   - Send the Pull Request link into the proper Slack channel.
    - After review and approval, the `hotfix` branch is merged into `master`, and subsequently into `staging`.
 
 ## Deployment Procedures
