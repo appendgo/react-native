@@ -18,6 +18,7 @@
 2. **Initiation**:
    - Upon starting work on the issue, the developer moves it to the `In Progress` column.
    - A new branch is created from the `staging` branch, and a draft Pull Request (PR) is opened.
+   - The Pull Request link is added to the Issue's Description and vice versa.
 
 3. **Review Preparation**:
    - Once the developer believes the work is complete, they merge the `staging` branch into their feature branch to ensure it's up-to-date.
@@ -26,11 +27,11 @@
 4. **Review & Merging**:
    - After code review and testing are passed, the feature branch is merged into the `staging` branch.
    - The issue is moved to the `Staging` column on the Kanban board.
-   - The Pull Request link is added to the Issue's Description and vice versa.
 
 ### Hotfix Branch Workflow
 1. **Issue Identification**:
    - Urgent issues requiring a hotfix are identified and a new `hotfix` branch is created from the `master` branch.
+   - The Pull Request link is added to the Issue's Description and vice versa.
 
 2. **Development & Testing**:
    - The hotfix is developed and tested in the `hotfix` branch.
@@ -38,7 +39,6 @@
 3. **Review & Merging**:
    - Once ready, a PR is opened to merge the `hotfix` branch into `master`.
    - After review and approval, the `hotfix` branch is merged into `master`, and subsequently into `staging`.
-   - The Pull Request link is added to the Issue's Description and vice versa.
 
 ## Deployment Procedures
 
