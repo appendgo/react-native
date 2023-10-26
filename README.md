@@ -18,7 +18,7 @@ Mobile Application development: **hello@appendgo.com**
   * [CodePush - iOS](installation/CODEPUSH-IOS.MD)
   * [CodePush - Android](installation/CODEPUSH-ANDROID.MD) 
 * **Deployment**
-  * [Development Workflow](main/DEVWORKFLOW.MD) 
+  * [Development Workflow](deployment/DEVWORKFLOW.MD) 
   * [iOS](deployment/DEPLOYIOS.MD)
   * [Android](deployment/DEPLOYANDROID.MD)
 * **Marketplace**
