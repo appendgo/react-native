@@ -7,7 +7,6 @@ Mobile Application development: **hello@appendgo.com**
 ## Content
 
 * **Core**
-  * [Development Workflow](main/DEVWORKFLOW.MD)
   * [Guidelines](main/GUIDELINES.MD)
   * [Code style](main/CODE-STYLE.MD)
   * [Best practices](main/BEST-PRACTICES.MD)
@@ -20,6 +19,7 @@ Mobile Application development: **hello@appendgo.com**
     * [CodePush iOS](installation/CODEPUSH-IOS.MD)
     * [CodePush Android](installation/CODEPUSH-ANDROID.MD) 
 * **Deployment**
+  * [Development Workflow](main/DEVWORKFLOW.MD) 
   * [iOS](deployment/DEPLOYIOS.MD)
   * [Android](deployment/DEPLOYANDROID.MD)
 * **Marketplace**
