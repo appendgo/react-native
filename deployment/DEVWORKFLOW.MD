@@ -17,7 +17,7 @@
 
 2. **Initiation**:
    - Upon starting work on the issue, the developer moves it to the `In Progress` column.
-   - A new branch is created from the `staging` branch, and a draft Pull Request (PR) is opened.
+   - A new branch is created from the `staging` branch, and a Pull Request (PR) is opened.
    - The Pull Request link is added to the Issue's Description and vice versa.
 
 3. **Review Preparation**:
