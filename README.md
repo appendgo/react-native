@@ -9,22 +9,21 @@ Mobile Application development: **hello@appendgo.com**
 * Core
   * [Development Workflow](main/DEVWORKFLOW.MD)
   * [Guidelines](main/GUIDELINES.MD)
+  * [Code style](main/CODE-STYLE.MD)
+  * [Best practices](main/BEST-PRACTICES.MD)
 * Installation
   * [General](installation/GENERAL.MD)
   * [Android](installation/ANDROID.MD)
   * [iOS](installation/IOS.MD)
   * [VSCode](installation/VSCODE.MD)
-* [Code style](main/CODE-STYLE.MD)
-* [Best practices](main/BEST-PRACTICES.MD)
-* CodePush
-  * [iOS](codepush/IOS.MD)
-  * [Android](codepush/ANDROID.MD)
-* [Troubleshooting](main/TROUBLESHOOTING.MD)
-  * [Cache](troubleshooting/CACHE.MD) 
-* Best packages (later)
+  * CodePush
+    * [CodePush iOS](installation/CODEPUSH-IOS.MD)
+      [CodePush Android](installation/CODEPUSH-ANDROID.MD) 
 * Deployment
-  * [Android](deploy/ANDROID.MD)
+  * [iOS](deploy/DEPLOYIOS.MD)
+  * [Android](deploy/DEPOYANDROID.MD)
 * Marketplace
   * [Huawei](marketplace/HUAWEI.MD)
-
+* [Troubleshooting](main/TROUBLESHOOTING.MD)
+  * [Cache](troubleshooting/CACHE.MD) 
 
