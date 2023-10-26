@@ -57,6 +57,3 @@
 
 3. **Deployment**:
    - Deploy the `master` branch to the production environment.
-
-## Versioning
-- Adhere to Semantic Versioning (Major.Minor.Patch) when bumping the version in the `staging` branch before merging to `master`.
