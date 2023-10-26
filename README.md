@@ -6,12 +6,14 @@ Mobile Application development: **hello@appendgo.com**
 
 ## Content
 
+* Core
+  * [Development Workflow](main/DEVWORKFLOW.MD)
+  * [Guidelines](main/GUIDELINES.MD)
 * Installation
   * [General](installation/GENERAL.MD)
   * [Android](installation/ANDROID.MD)
   * [iOS](installation/IOS.MD)
   * [VSCode](installation/VSCODE.MD)
-* [Guidelines](main/GUIDELINES.MD)
 * [Code style](main/CODE-STYLE.MD)
 * [Best practices](main/BEST-PRACTICES.MD)
 * CodePush
