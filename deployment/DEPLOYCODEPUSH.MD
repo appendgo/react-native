@@ -6,12 +6,12 @@ When the current Staging branch is ready for deployment, follow the steps below 
 
 1. **iOS Deployment**:
     ```bash
-    appcenter codepush release-react -a Salonic/Salonic-iOS -d Staging -m
+    appcenter codepush release-react -a <APP> -d Staging -m
     ```
 
 2. **Android Deployment**:
     ```bash
-    appcenter codepush release-react -a Salonic/Salonic-Android -d Staging -m
+    appcenter codepush release-react -a <APP> -d Staging -m
     ```
 
 ## Production Deployment
@@ -23,7 +23,7 @@ When the current Staging branch is ready for deployment, follow the steps below 
 
 ### Bumping the Version Number
 
-1. Update the `CFBundleVersion` property in the `ios/salonicMobile/Info.plist` file with the new version number.
+1. Update the `CFBundleVersion` property in the `ios/<APP>/Info.plist` file with the new version number.
 2. Update the `versionCode` property in the `android/app/build.gradle` file with the new version number.
 3. Review the changes with the following command:
     ```bash
@@ -32,7 +32,7 @@ When the current Staging branch is ready for deployment, follow the steps below 
 
 4. Stage, commit, and push the version bump changes:
     ```bash
-    git add -A; git commit -m "codepush major.minor.patch (versionCode)"; git push origin HEAD
+    git add -A; git commit -m "codepush <major.minor.patch> (<versionCode>)"; git push origin HEAD
     ```
 
 5. Create a Pull Request from `staging` to `master` with the title `codepush major.minor.patch (versionCode)`, get it approved, and merge it.
@@ -45,10 +45,10 @@ When the current Staging branch is ready for deployment, follow the steps below 
 
 1. **iOS Deployment**:
     ```bash
-    appcenter codepush release-react -a Salonic/Salonic-iOS -d Production -m
+    appcenter codepush release-react -a <APP> -d Production -m
     ```
 
 2. **Android Deployment**:
     ```bash
-    appcenter codepush release-react -a Salonic/Salonic-Android -d Production -m
+    appcenter codepush release-react -a <APP> -d Production -m
     ```
