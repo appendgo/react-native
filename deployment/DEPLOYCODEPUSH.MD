@@ -32,10 +32,10 @@ When the current Staging branch is ready for deployment, follow the steps below 
 
 4. Stage, commit, and push the version bump changes:
     ```bash
-    git add -A; git commit -m "codepush 1.2.0 (52)"; git push origin HEAD
+    git add -A; git commit -m "codepush major.minor.patch (versionCode)"; git push origin HEAD
     ```
 
-5. Create a Pull Request from `staging` to `master` with the title `codepush 1.2.0 (52)`, get it approved, and merge it.
+5. Create a Pull Request from `staging` to `master` with the title `codepush major.minor.patch (versionCode)`, get it approved, and merge it.
 6. Switch to the `master` branch and pull the latest changes:
     ```bash
     git checkout master; git pull
