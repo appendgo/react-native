@@ -22,6 +22,7 @@ Mobile Application development: **hello@appendgo.com**
   * [CodePush](deployment/DEPLOYCODEPUSH.MD)
   * [Manual Native](deployment/DEPLOYMANUAL.MD)
   * FastLane - TODO
+  * [Release Notes](deployment/RELEASENOTES.MD)
 * **Marketplace**
   * [Huawei](marketplace/HUAWEI.MD)
 * **Troubleshooting**
