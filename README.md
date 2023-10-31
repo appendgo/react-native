@@ -26,6 +26,6 @@ Mobile Application development: **hello@appendgo.com**
 * **Marketplace**
   * [Huawei](marketplace/HUAWEI.MD)
 * **Troubleshooting**
-  * [iOS](troubleshoot/IOS.MD)
+  * [iOS](troubleshooting/IOS.MD)
   * [Cache](troubleshooting/CACHE.MD)
 
