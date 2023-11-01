@@ -2,6 +2,29 @@
 
 * `yarn add react-native-config`
 * `cd ios && pod install && cd ..`
+
+# Create .env files for each configuration
+
+* `.env.development`
+
+```
+ENV=development
+```
+
+* `.env.staging`
+
+```
+ENV=staging
+```
+
+* `.env.production`
+
+```
+ENV=production
+```
+
+# Android Setup
+
 * to `android/app/build.gradle` add this
 
 ```
@@ -29,26 +52,6 @@ android {
     }
 ...
 }
-```
-
-# Create .env files for each configuration
-
-* `.env.development`
-
-```
-ENV=development
-```
-
-* `.env.staging`
-
-```
-ENV=staging
-```
-
-* `.env.production`
-
-```
-ENV=production
 ```
 
 
