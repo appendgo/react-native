@@ -30,7 +30,7 @@ ENV=production
 ```
 apply plugin: "com.android.application"
 
-// these below
+// add these below
 apply from: project(':react-native-config').projectDir.getPath() + '/dotenv.gradle'
 
 project.ext.envConfigFiles = [
@@ -48,10 +48,37 @@ android {
     namespace 'com.reactnativesetup'
     defaultConfig {
         ...
-        resValue 'string', 'build_config_package','com.x.y.' // <---- Add this line
+        resValue 'string', 'build_config_package','com.x.y.' // <---- Add this line. Change `com.x.y`.
     }
 ...
 }
+```
+
+* also create FlavorDimensions and ProductFlavors
+
+```
+...
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    // add these below
+    flavorDimensions 'env'
+    productFlavors {
+        development {
+            dimension 'env'
+            applicationIdSuffix ".development"
+        }
+        staging {
+            dimension 'env'
+            applicationIdSuffix ".staging"
+        }
+        production {
+            dimension 'env'
+            applicationIdSuffix ""
+        }
+    }
+}
+...
 ```
 
 
