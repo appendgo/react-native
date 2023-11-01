@@ -6,7 +6,29 @@
 
 ```
 apply plugin: "com.android.application"
-apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle" // <- add this line
+
+// these below
+apply from: project(':react-native-config').projectDir.getPath() + '/dotenv.gradle'
+
+project.ext.envConfigFiles = [
+        development: ".env.development",
+        staging :".env.staging",
+        production:'.env.production'
+]
+```
+
+* also add resValue in default config
+
+```
+android {
+...
+    namespace 'com.reactnativesetup'
+    defaultConfig {
+        ...
+        resValue 'string', 'build_config_package','com.x.y.' // <---- Add this line
+    }
+...
+}
 ```
 
 # Create .env files for each configuration
@@ -28,6 +50,8 @@ ENV=staging
 ```
 ENV=production
 ```
+
+
 
 
 
