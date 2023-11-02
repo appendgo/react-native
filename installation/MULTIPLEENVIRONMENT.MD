@@ -120,3 +120,50 @@ public class BuildTypePackage implements ReactPackage {
         }
 ...
 ```
+
+# iOS 
+
+## Create new files
+
+* `Objective-C File` -> `BuildTypeModule.m`
+* `Header File` -> `BuildTypeModule.h`
+
+![](../images/multiple_environment_xcode_add_new_file.png)
+
+## `BuildTypeModule.h`
+
+```
+#import <React/RCTBridgeModule.h>
+
+@interface RCT_EXTERN_MODULE(BuildTypeModule, NSObject)
+
+RCT_EXTERN_METHOD(getBuildType:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject)
+
+@end
+```
+
+## `BuildTypeModule.m`
+
+```
+#import "BuildTypeModule.h"
+
+@implementation BuildTypeModule
+
+RCT_EXPORT_MODULE();
+
+RCT_EXPORT_METHOD(getBuildType:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject)
+{
+    #if DEBUG
+        resolve(@"Debug");
+    #elif STAGING
+        resolve(@"Staging");
+    #else
+        resolve(@"Release");
+    #endif
+}
+
+@end
+```
+
