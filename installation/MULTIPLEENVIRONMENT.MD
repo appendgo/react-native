@@ -167,3 +167,10 @@ RCT_EXPORT_METHOD(getBuildType:(RCTPromiseResolveBlock)resolve
 @end
 ```
 
+## Preprocessors
+
+* `Debug` -> `DEBUG=1`
+* `Staging` -> `STAGING=1`
+* `Release` -> `RELEASE=1`
+
+![](../images/multiple_environment_xcode_preprocessors.png)
