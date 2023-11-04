@@ -22,7 +22,7 @@ Mobile Application development: **hello@appendgo.com**
   * [Development Workflow](deployment/DEVWORKFLOW.MD)
   * [CodePush](deployment/DEPLOYCODEPUSH.MD)
   * [Manual Native](deployment/DEPLOYMANUAL.MD)
-  * [Fastlane Native](installation/FASTLANE.MD)
+  * [Fastlane Native](deployment/FASTLANE.MD)
   * [Release Notes](deployment/RELEASENOTES.MD)
 * **Marketplace**
   * [Huawei](marketplace/HUAWEI.MD)
