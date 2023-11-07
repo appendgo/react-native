@@ -20,7 +20,7 @@ Follow these steps to access developer options in the Google Play Store:
     * Go to the **About section** of the settings.
     * Tap **seven times** on the *Play Store Version*. This is a common easter egg in Android systems to unlock developer options.
   * Step 4: Developer Status Confirmation
-    * After the seventh tap, you should see a prompt saying **“You are now a developer!”**. Post this, the **“Internal App Sharing”** option will become visible to you in the **General | User Controls** section.
+    * After the seventh tap, you should see a prompt saying **“You are now a developer!”**. Post this, the **“Internal App Sharing”** option will become visible to you in the **General -> User Controls** section.
 
 # Usage
 
