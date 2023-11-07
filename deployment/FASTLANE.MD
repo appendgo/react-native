@@ -5,6 +5,25 @@
 * `cd ios && fastlane add_plugin appicon && cd ..`
 * `cd android && fastlane add_plugin appicon && cd ..`
 
+### Android - How to use Internal App Sharing
+
+(How to Enable Developer Options in the Play Store)
+
+Follow these steps to access developer options in the Google Play Store:
+
+#### Step 1: Open the Play Store
+Start by launching the **Play Store** app on your device.
+
+#### Step 2: Access Settings
+Navigate to the settings by clicking on your **account profile picture**, which is located at the top right corner of the screen.
+
+#### Step 3: Enable Developer Options
+1. Go to the **About section** of the settings.
+2. Tap **seven times** on the *Play Store Version*. This is a common easter egg in Android systems to unlock developer options.
+
+#### Step 4: Developer Status Confirmation
+After the seventh tap, you should see a prompt saying **“You are now a developer!”**. Post this, the **“Internal App Sharing”** option will become visible to you in the **General | User Controls** section.
+
 # Usage
 
 ## iOS staging
