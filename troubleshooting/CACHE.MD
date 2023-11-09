@@ -1,39 +1,43 @@
-# iOS
+# Cache
 
-## Complete cleanup (pod reset)
+## iOS
+
+### Complete cleanup (pod reset)
 
 ```
 rm -rf ~/Library/Caches/CocoaPods
-rm -rf Pods
 rm -rf ~/Library/Developer/Xcode/DerivedData/*
+cd ios
+rm -rf Pods
 pod deintegrate
 pod setup
 pod install
 ```
 
-## Clean all cached CocoaPods
+### Clean all cached CocoaPods
 
 ```
 pod cache clean --all
 ```
 
-## Clean CocoaPods cache, re-download and re-install all pods
+### Clean CocoaPods cache, re-download and re-install all pods
 
 ```
 rm -rf "${HOME}/Library/Caches/CocoaPods"
-rm -rf "`pwd`/Pods/"
+cd ios
+rm -rf Pods
 pod update
 ```
 
-# Android
+## Android
 
-## Clean project build outputs
+### Clean project build outputs
 
 ```
 ./gradlew clean
 ```
 
-## Cleaning the Build Cache
+### Cleaning the Build Cache
 ```
 ./gradlew cleanBuildCache
 ```
