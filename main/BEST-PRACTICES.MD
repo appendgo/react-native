@@ -1,14 +1,5 @@
 # React-Native Development Best Practices
 
-## File Naming Conventions
-Ensure file names are specific and descriptive.
-
-### Bad Examples:
-* `ListScreen`
-
-### Good Examples:
-* `ProductListScreen`
-
 ## Descriptive Action Naming
 When you have multiple actions like `fetchClientsAction` in the project that fetch clients in different ways, include the screen or module name in each `fetchClientsAction` for clarity.
 
