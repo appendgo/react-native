@@ -1,26 +1,25 @@
-# Guidelines
+# React-Native Development Guidelines
 
-## Reinvent the wheel
+## Reinvent the Wheel: A Unique Approach
 
-In most platform there is a general truth that says don't reinvent the wheel. If there is an existing package, solution for something which is widely and successfully used, already tested by bunch of people then use that solution in your package.
+### Why It's Different in React-Native
+In many development platforms, the adage "don't reinvent the wheel" is a guiding principle. This means leveraging existing, well-tested solutions whenever possible. However, this principle isn't as straightforward in the context of React-Native. Here's why:
 
-Now in React-Native it's not entirely true in our experience. There are huge number of packages which are not tested properly, several years old and not maintained, and when you combine a couple of packages together in one screen than comes the real problem.
+- **Numerous Packages, Questionable Reliability**: The React-Native ecosystem is full of packages. However, many are not rigorously tested, outdated, and lack maintenance. Combining multiple such packages in a single project can lead to significant issues.
 
-The guideline here is that you have to review the package carefully! Only use the package if you did a smoke test on it and you're absolutely sure it's okay!
+### Key Guideline
+- **Careful Package Review**: It's crucial to thoroughly review any package you consider integrating. Conduct a smoke test and ensure the package is reliable before using it in your project.
 
-**In your core package you'd better write the components yourself!**
+- **Prefer Custom Components in Core Packages**: For critical parts of your project, it's often safer to write your components rather than relying on external packages.
 
-If you find a solution which seems good, check these out:
-* Number of bugs (issues)
-* When was the last modification
-* When was the last release
-* * How many users use it
-* How many stars does it have
+### What to Check in a Package
+If you come across a package that seems suitable, evaluate it based on the following criteria:
+- Number of open issues (bugs)
+- Date of the last modification
+- Date of the last release
+- User base size
+- Star ratings on repositories
 
-## Common components
+## Common Components
 
-Before you start to deal with a component always check the Design how many places is it?
--> If it's more then 1 it should be on a higher level in the project tree, or it should be a common component!
-
-
-
+- **Design Consideration**: Before developing a component, refer to the design specifications. If a component is used in multiple places, it should be positioned higher in the project tree or designed as a common component.
