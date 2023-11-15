@@ -30,6 +30,7 @@ export default class SingleSelectList extends Component {
   renderItem() {
   }
 }
+```
 
 ### Good Example:
 ```javascript
@@ -52,7 +53,7 @@ export default class SingleSelectList extends Component {
 }
 ```
 
-## `mapStateToProps` Usage
+## mapStateToProps Usage
 
 * Create only a single level return object in `mapStoreToProps`.
 * Use the `store` prefix to differentiate between Component state and Redux Store state.
