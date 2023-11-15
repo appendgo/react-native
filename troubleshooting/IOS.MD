@@ -24,3 +24,7 @@ pod 'React-Core/RCTWebSocket', :path => '../node_modules/react-native/'
 * `rm -rf Pods`
 * `pod deintegrate`
 * `pod install`
+
+# error: Multiple commands produce
+
+![](../images/error_multiple_commands_produce.png)
