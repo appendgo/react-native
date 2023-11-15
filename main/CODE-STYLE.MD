@@ -1,4 +1,4 @@
-# React-Native Development Guidelines
+# React-Native Development Code Style
 
 ## Specific and Descriptive File Names
 
