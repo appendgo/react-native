@@ -28,6 +28,7 @@ Mobile Application development: **hello@appendgo.com**
     * [Native build - Fastlane](deployment/FASTLANENATIVE.MD)
     * [CodePush - Fastlane](deployment/FASTLANECODEPUSH.MD)
   * [Release Notes](deployment/RELEASENOTES.MD)
+  * [Visual Workflow](deployment/VISUALWORKFLOW.MD)
 * **Troubleshooting**
   * [iOS](troubleshooting/IOS.MD)
   * [Cache](troubleshooting/CACHE.MD)
