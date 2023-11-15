@@ -25,3 +25,7 @@ Version: 5.1.0
 Publisher: Rebecca Vest
 VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=rvest.vs-code-prettier-eslint
 ```
+
+## ESLint - Fix code command
+
+![](../images/vscode_eslint_fix_command.png)
