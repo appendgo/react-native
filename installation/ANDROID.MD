@@ -1,4 +1,4 @@
-# Installation / Android
+# Android Installation for React Native
 
 ## How to remove existing OpenJDK - if needed
 
