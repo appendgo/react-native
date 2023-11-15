@@ -28,4 +28,4 @@ VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=rvest.v
 
 ## ESLint - Fix code command
 
-![](../images/vscode_eslint_fix_command.png)
+![](../images/vscode_eslint_fixcommand.png)
