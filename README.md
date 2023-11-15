@@ -22,10 +22,10 @@ Mobile Application development: **hello@appendgo.com**
 * **Deployment**
   * [Development Workflow](deployment/DEVWORKFLOW.MD)
   * Manual
-    * [Native - Manual](deployment/DEPLOYMANUAL.MD)
+    * [Native build - Manual](deployment/DEPLOYMANUAL.MD)
     * [CodePush - Manual](deployment/DEPLOYCODEPUSH.MD)
   * Fastlane
-    * [Native - Fastlane](deployment/FASTLANENATIVE.MD)
+    * [Native build - Fastlane](deployment/FASTLANENATIVE.MD)
     * [CodePush - Fastlane](deployment/FASTLANECODEPUSH.MD)
   * [Release Notes](deployment/RELEASENOTES.MD)
 * **Troubleshooting**
