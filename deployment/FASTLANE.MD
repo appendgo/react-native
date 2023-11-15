@@ -22,32 +22,6 @@ Follow these steps to access developer options in the Google Play Store:
   * Step 4: Developer Status Confirmation
     * After the seventh tap, you should see a prompt saying **“You are now a developer!”**. Post this, the **“Internal App Sharing”** option will become visible to you in the **General -> User Controls** section.
 
-# Usage
-
-## iOS staging
-
-* `cd ios`
-* `FASTLANE_USER=<APPLE_ID> FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD=<PASSWORD> fastlane ios staging`
-* `FASTLANE_USER=<APPLE_ID> FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD=<PASSWORD> BUMP_TYPE=patch fastlane ios staging`
-
-## iOS release
-
-* `cd ios`
-* `FASTLANE_USER=<APPLE_ID> FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD=<PASSWORD> fastlane ios release`
-* `FASTLANE_USER=<APPLE_ID> FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD=<PASSWORD> BUMP_TYPE=patch fastlane ios release`
-
-## Android staging
-
-* `cd android`
-* `fastlane android staging`
-* `BUMP_TYPE=minor fastlane android staging`
-
-## Android release
-
-* `cd android`
-* `fastlane android release`
-* `BUMP_TYPE=minor fastlane android release`
-
 # iOS setup
 
 ## App-Specific Password
@@ -80,6 +54,48 @@ team_id("96H4HCU6TD") # Developer Portal Team ID
 default_platform(:ios)
 
 platform :ios do
+  desc "Bump version"
+  lane :bumpversion do
+    ensure_git_branch(branch: 'staging')
+    ensure_git_status_clean
+    git_pull
+
+    new_version_number = get_version_number(xcodeproj: "BillingoMobile.xcodeproj")
+    new_build_number = increment_build_number(xcodeproj: "BillingoMobile.xcodeproj")
+
+    if ENV['BUMP_TYPE']
+      new_version_number = increment_version_number(
+        xcodeproj: "BillingoMobile.xcodeproj",
+        bump_type: ENV['BUMP_TYPE'] # Can be "patch", "minor", or "major"
+      )
+    end
+
+    # Output the new version and build numbers
+    puts "New Version Number: #{new_version_number}"
+    puts "New Build Number: #{new_build_number}"
+
+    # Read version.js
+    version_js_path = '../../version.js'
+    version_js_content = File.read(version_js_path)
+
+    # Update version and versionCode
+    version_js_content.gsub!(/version: '\d+\.\d+\.\d+'/, "version: '#{new_version_number}'") unless new_version_number.nil?
+    version_js_content.gsub!(/versionCode: '\d+'/, "versionCode: '#{new_build_number}'")
+
+    # Write the changes back to version.js
+    File.open(version_js_path, "w") { |file| file.puts version_js_content }
+
+    sh "git add #{version_js_path}"
+
+    commit_version_bump(
+      message: "Bump build to version #{new_version_number} (#{new_build_number})",
+      xcodeproj: 'BillingoMobile.xcodeproj',
+      include: ['version.js']
+    )
+
+    push_to_git_remote
+  end
+
   desc "Push a new staging build to TestFlight"
   lane :staging do
     ensure_git_branch(
@@ -87,15 +103,8 @@ platform :ios do
     )
     ensure_git_status_clean
     git_pull
-    if ENV['BUMP_TYPE']
-      increment_version_number(
-        xcodeproj: "BillingoMobile.xcodeproj",
-        bump_type: ENV['BUMP_TYPE']  # Can be "patch", "minor", or "major"
-      )
-      increment_build_number(xcodeproj: "BillingoMobile.xcodeproj")
-    else
-      increment_build_number(xcodeproj: "BillingoMobile.xcodeproj")
-    end
+    clear_derived_data
+    clean_build_artifacts
     appicon(
       appicon_image_file: './appiconstaging.png',
       appicon_devices: [:iphone, :ipad, :ios_marketing],
@@ -108,30 +117,19 @@ platform :ios do
       appicon_devices: [:iphone, :ipad, :ios_marketing],
       appicon_path: './BillingoMobile/Images.xcassets'
     )
-    commit_version_bump(message: 'Bump build', xcodeproj: 'BillingoMobile.xcodeproj')
-    push_to_git_remote
   end
 
   desc "Push a new release build to TestFlight"
-  lane :relese do
+  lane :release do
     ensure_git_branch(
       branch: 'master'
     )
     ensure_git_status_clean
     git_pull
-    if ENV['BUMP_TYPE']
-      increment_version_number(
-        xcodeproj: "BillingoMobile.xcodeproj",
-        bump_type: ENV['BUMP_TYPE']  # Can be "patch", "minor", or "major"
-      )
-      increment_build_number(xcodeproj: "BillingoMobile.xcodeproj")
-    else
-      increment_build_number(xcodeproj: "BillingoMobile.xcodeproj")
-    end
+    clear_derived_data
+    clean_build_artifacts
     build_app(workspace: "BillingoMobile.xcworkspace", scheme: "BillingoMobile")
-    upload_to_testflight    
-    commit_version_bump(message: 'Bump build', xcodeproj: 'BillingoMobile.xcodeproj')
-    push_to_git_remote
+    upload_to_testflight
   end
 end
 ```
@@ -166,8 +164,8 @@ package_name("com.your.project") # e.g. com.krausefx.app
 default_platform(:android)
 
 platform :android do
-  desc "Push a new staging build to Play Store :: Internal"
-  lane :staging do
+  desc "Bump version"
+  lane :bumpversion do
     ensure_git_branch(
       branch: 'staging'
     )
@@ -178,46 +176,51 @@ platform :android do
     else
       increment_version_code
     end
-    set_appicon_to_staging
-    gradle(
-      task: 'assemble',
-      build_type: 'ReleaseStaging'
-    )
-    supply(
-      track: 'internal',
-      apk: './app/build/outputs/apk/releaseStaging/app-releaseStaging.apk',
-      package_name: 'com.billingo.mobile'
-    )
-    set_appicon_to_release
-    sh("git add ../app/build.gradle")
+    sh("git add -A")
     sh("git commit -m 'Bump version'") 
     push_to_git_remote
   end
 
-  desc "Push a new release build to Play Store :: Alpha"
+  desc "Push a new staging build to Play Store :: In App Share"
+  lane :staging do
+    ensure_git_branch(
+      branch: 'staging'
+    )
+    ensure_git_status_clean
+    git_pull
+    gradle(task: 'clean', project_dir: './')
+    set_appicon_to_staging
+    gradle(
+      task: 'bundle',
+      build_type: 'ReleaseStaging'
+    )
+    download_url = upload_to_play_store_internal_app_sharing(
+      aab: './app/build/outputs/bundle/releaseStaging/app-releaseStaging.aab',
+      package_name: 'com.billingo.mobile'
+    )
+    set_appicon_to_release
+    UI.message("---------------------------------------")
+    UI.message("======> Download URL: #{download_url}")
+    UI.message("---------------------------------------")
+  end
+
+  desc "Push a new release build to Play Store :: Internal Test"
   lane :release do
     ensure_git_branch(
       branch: 'master'
     )
     ensure_git_status_clean
     git_pull
-    if ENV['BUMP_TYPE']
-      increment_versions
-    else
-      increment_version_code
-    end
+    gradle(task: 'clean', project_dir: './')
     gradle(
-      task: 'assemble',
+      task: 'bundle',
       build_type: 'Release'
     )
     supply(
-      track: 'alpha',
-      apk: './app/build/outputs/apk/release/app-release.apk',
+      track: 'internal',
+      aab: './app/build/outputs/bundle/release/app-release.aab',
       package_name: 'com.billingo.mobile'
     )
-    sh("git add ../app/build.gradle")
-    sh("git commit -m 'Bump version'") 
-    push_to_git_remote
   end
 
   private_lane :increment_version_code do
