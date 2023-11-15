@@ -25,8 +25,6 @@ Mobile Application development: **hello@appendgo.com**
   * [Manual Native](deployment/DEPLOYMANUAL.MD)
   * [Fastlane Native](deployment/FASTLANE.MD)
   * [Release Notes](deployment/RELEASENOTES.MD)
-* **Marketplace**
-  * [Huawei](marketplace/HUAWEI.MD)
 * **Troubleshooting**
   * [iOS](troubleshooting/IOS.MD)
   * [Cache](troubleshooting/CACHE.MD)
