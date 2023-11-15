@@ -4,10 +4,10 @@
 Ensure file names are specific and descriptive.
 
 ### Bad Examples:
-* [List any bad examples here]
+* `ListScreen`
 
 ### Good Examples:
-* [List good examples here]
+* `ProductListScreen`
 
 ## Descriptive Action Naming
 When you have multiple actions like `fetchClientsAction` in the project that fetch clients in different ways, include the screen or module name in each `fetchClientsAction` for clarity.
