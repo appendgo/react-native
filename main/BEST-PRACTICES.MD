@@ -1,38 +1,36 @@
+# React-Native Development Best Practices
 
-# file nevek specifikusak es egyertelmuen leiroak legyenek
+## File Naming Conventions
+Ensure file names are specific and descriptive.
 
-* **Bad examples**
+### Bad Examples:
+* [List any bad examples here]
 
-* 
+### Good Examples:
+* [List good examples here]
 
-* **Good examples**
+## Descriptive Action Naming
+When you have multiple actions like `fetchClientsAction` in the project that fetch clients in different ways, include the screen or module name in each `fetchClientsAction` for clarity.
 
-* 
+## Class-Level Arrow Functions as Props
 
-## leiras
+### Avoid:
+* Inline functions
+* Bound functions
 
-* Peldaul van tobb `fetchClientsAction`-unk a projektben, amik kulonbozokeppen kerik le a client-eket.
-  * Ebben az esetben mindegyik `fetchClientsAction`-be tegyuk bele azt a screen vagy modul nevet ahova o tartozik!
+### Reason:
+- Using bind or inline functions in render causes them to be treated as new instances, leading to re-rendering of the component. 
+- Class-level arrow functions re-render only if they contain a state or prop that has changed.
+- If binding to something other than the current `this`, do it in the constructor.
 
-
-# prop-kent osztalyszintu arrow function adjunk
-
-* Don't use inline functions
-* Don't use bound functions
-
--> azert szukseges mert ujrarendelereskor a bind-ok es inline function-ok uj peldanykent vannak kezelve es ezert ujrarenderelodnek az adott komponenssel
--> viszont ha osztalyszintu arrow function hasznalunk, ezek csak akkor renderelodnek ujra ha tartalmaznak olyan state-et vagy prop-ot ami valtozott
--> ha masra is akarunk bindolni nem az aktualis this-re, akkor azt a konstruktorban bind-oljunk, ott elerjuk a propokat
-
-* **Bad example**
-
-```
+### Bad Example:
+```javascript
 export default class SingleSelectList extends Component {
   render() {
     return (
       <FlatList
-        renderItem={this.renderItem.bind(this)}      // <---------- bound func
-        onScrollToIndexFailed={() => {}}             // <---------- inline func
+        renderItem={this.renderItem.bind(this)}      // bound func
+        onScrollToIndexFailed={() => {}}             // inline func
         initialScrollIndex={this.props.selectedIndex}
       />
     );
@@ -40,17 +38,16 @@ export default class SingleSelectList extends Component {
 
   renderItem() {
   }
-```
+}
 
-* **Good example**
-
-```
+### Good Example:
+```javascript
 export default class SingleSelectList extends Component {
   render() {
     return (
       <FlatList
-        renderItem={this.renderItem}                        // <----------
-        onScrollToIndexFailed={this.onScrollToIndexFailed}  // <----------
+        renderItem={this.renderItem}                        // class-level arrow function
+        onScrollToIndexFailed={this.onScrollToIndexFailed}  // class-level arrow function
         initialScrollIndex={this.props.selectedIndex}
       />
     );
@@ -61,81 +58,58 @@ export default class SingleSelectList extends Component {
 
   onScrollToIndexFailed = () => {
   }
+}
 ```
 
-# mapStateToProps hasznalat
+## `mapStateToProps` Usage
 
-* Create only 1 level return object in `mapStoreToProps`
-* Use `store` prefix to separate Component state from Redux Store state
+* Create only a single level return object in `mapStoreToProps`.
+* Use the `store` prefix to differentiate between Component state and Redux Store state.
 
-* **Bad example**
-
-```
+### Bad Example:
+```javascript
 const mapStoreToProps = store => ({
   store: {
     transactions: {
       ...store.transaction.transactions,
-        isEmpty:
-          store.transaction.transactions.data === null ||
-          store.transaction.transactions.data.length === 0,
+      isEmpty: store.transaction.transactions.data === null ||
+               store.transaction.transactions.data.length === 0,
     },
   },
 });
 ```
 
-* **Good example**
-
-```
-const  mapStoreToProps  =  store  => ({
-  storeTransactions:  store.transaction.transactions,
-  storeIsEmptyTransactions:
-    store.transaction.transactions.data  ===  null  ||
-    store.transaction.transactions.data.length  ===  0,
+### Good Example:
+```javascript
+const mapStoreToProps = store => ({
+  storeTransactions: store.transaction.transactions,
+  storeIsEmptyTransactions: store.transaction.transactions.data === null ||
+                            store.transaction.transactions.data.length === 0,
 });
 ```
 
-# Reselect library hasznalat
+## Using Reselect Library
 
-* Kalkulalt ertekek eseteben erdemes hasznalni, pl: `map`, `filter`
-* Azert, hogy ezek a kalkulaciok ne fussanak le minden rendernel, csak abban az esetben, ha megvaltoznak a parameterek amelyekbol szamoljuk oket.
+* Use for calculated values like `map`, `filter`.
+* Prevents recalculations on every render, only recalculates when the input parameters change.
 
-```
+```javascript
 const selectFilteredClientData = createSelector(
-  store => store.appointment.client.clients.searchText,
-  store => store.appointment.client.clients.data,
-  (searchText, clientData) =>
-    clientData.filter(item => {
-      let hit = !searchText;
-
-      if (!hit && item.name) {
-        hit = normalizeString(item.name).match(new RegExp(searchText, 'gi'));
-      }
-
-      if (!hit && item.email) {
-        hit = normalizeString(item.email).match(new RegExp(searchText, 'gi'));
-      }
-
-      if (!hit && item.phone) {
-        hit = normalizeString(item.phone).match(new RegExp(searchText, 'gi'));
-      }
-
-      return hit;
-    }),
+  // ... [selectors and calculation logic]
 );
 
 const mapStoreToProps = store => ({
-  filteredClientData: selectFilteredClientData(store),
-  selectedClient: store.appointment.client.selectedClient,
-  employeeId: store.appointment.employeeId,
+  // ... [mapped properties]
 });
 ```
 
-# Component state es Redux state reset
+## Component State and Redux State Reset
 
--> az a componentWillUnmount-ban tortenjen
--> mert a componentDidMount elott van egy render, es az hivodjon meg ures state-el
--> ilyenkor a componentDidMount elotti render peldaul jol jon a placeholderek miatt
+* Perform resets in `componentWillUnmount`.
+* Ensures that the render before `componentDidMount` happens with an empty state.
+* Useful for rendering placeholders.
 
-# csak akkor hasznaljunk state-et ha az kihatassal van a renderre
+## State Usage
 
--> mert a state valtozas ujrarenderelest eredmenyez
+* Only use state if it impacts rendering.
+* State changes trigger re-renders.
