@@ -1,24 +1,24 @@
-# file nevek specifikusak es egyertelmuen leiroak legyenek
+# React-Native Development Guidelines
 
-* **Bad examples**
+## Specific and Descriptive File Names
 
+### Bad Examples
 * `NewScreen`
 
-* **Good examples**
-
+### Good Examples
 * `DocumentNewScreen`
 
-# Metodusok sorrendje :: Class component eseteben
+## Method Order in Class Components
 
-Cel: Fentrol lefele sorrendben rendezzuk a metodusokat
+Aim: Arrange methods in a top-down order.
 
-1. context
-2. __constructor
-3. Lifecycle metodusok
-4. render
-5. renderXY
-6. egyeb metodusok
+1. `context`
+2. `__constructor`
+3. Lifecycle methods
+4. `render`
+5. `renderXY`
+6. Other methods
 
-# Export default
+## Default Exports
 
-Alapbol a class soraban legyen, kiveve persze ha Redux connect-et hasznalunk
+- Use default export inline with the class declaration, except when using Redux's `connect`.
