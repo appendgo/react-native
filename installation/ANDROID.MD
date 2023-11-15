@@ -1,5 +1,9 @@
 # Installation / Android
 
+## How to remove existing OpenJDK - if needed
+
+* `sudo rm -rf /Library/Java/JavaVirtualMachines/jdkmajor.minor.macro[_update].jdk`
+
 ## OpenJDK
 
 * `brew tap homebrew/cask-versions`
