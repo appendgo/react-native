@@ -19,6 +19,8 @@ Mobile Application development: **hello@appendgo.com**
   * [CodePush - Android](installation/CODEPUSH-ANDROID.MD)
   * [Multiple environment](installation/MULTIPLEENVIRONMENT.MD)
   * [Fastlane](installation/FASTLANE.MD)
+* **Run**
+  * [Run](run/RUN.MD)
 * **Deployment**
   * [Development Workflow](deployment/DEVWORKFLOW.MD)
   * Manual
