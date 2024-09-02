@@ -6,6 +6,9 @@
 
 ## OpenJDK
 
+* `brew install --cask temurin@11`
+* `java --version`
+---
 * `brew tap homebrew/cask-versions`
 * `brew install --cask zulu11`
 * `java --version`
