@@ -26,6 +26,10 @@
 * `nvm use 16.20.0`
 * `node --version`
 
+## NVM - SYMLINK
+
+* `ln -s $(which node) /usr/local/bin/node`
+
 ## Yarn
 
 * `npm install --global yarn`
