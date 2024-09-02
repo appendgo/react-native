@@ -9,7 +9,7 @@ brew install ruby@3.0
 ruby --version
 ```
 
-### * Add the following lines to your ~/.zprofile or ~/.zshrc (if you are using bash, then ~/.bash_profile or ~/.bashrc) config file:
+### Add the following lines to your ~/.zprofile or ~/.zshrc (if you are using bash, then ~/.bash_profile or ~/.bashrc) config file:
 
 ```
 export PATH="/opt/homebrew/opt/ruby@3.0/bin:$PATH"
