@@ -1,17 +1,9 @@
 # iOS Installation for React Native
 
-## RVM (Ruby Version Manager)
+## Ruby
 
-- Install RVM:
 ```
-curl -sSL https://get.rvm.io | bash -s stable
-```
-
-- Install and use Ruby 2.7.5:
-```
-rvm install 2.7.5
-rvm use 2.7.5 --default
-rvm list
+brew install ruby@3.0
 ruby --version
 ```
 
