@@ -18,7 +18,8 @@
 ### Error with react-native-fingerprint-scanner
 * Error message: Could not find com.wei.android.lib:fingerprintidentify:1.2.6.
 * `-> node_modules/react-native-fingerprint-scanner/android/build.gradle`
-* replace this code: `"com.wei.android.lib:fingerprintidentify:${safeExtGet("fingerprintidentify", "1.2.6")}"` with this code: `"com.github.uccmawei:FingerprintIdentify:1.2.6"`
+* replace this code: `"com.wei.android.lib:fingerprintidentify:${safeExtGet("fingerprintidentify", "1.2.6")}"`
+with this code: `"com.github.uccmawei:FingerprintIdentify:1.2.6"`
 
 ### No connected devices error (in case of Android)
 * `-> Android Studio terminal`
