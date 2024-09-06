@@ -28,6 +28,7 @@ with this code: `"com.github.uccmawei:FingerprintIdentify:1.2.6"`
 ### Error with FlipperPlatformWebSocket (in case of iOS)
 * `-> ios/Podfile`
 * comment out this line: `:flipper_configuration => FlipperConfiguration.enabled`
+* `cd ios`
 * `bundle exec pod install`
 
 ### Error with main.jsbundle
