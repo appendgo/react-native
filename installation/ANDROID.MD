@@ -43,5 +43,5 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 ```
 
 ## Check
-
+* `-> Android Studio terminal`
 * `emulator -list-avds`
