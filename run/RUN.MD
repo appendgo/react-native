@@ -11,7 +11,9 @@
 
 ### Android
 
-* `npx react-native run-android`
+* `-> Android Studio terminal`
+* run the emulator with: `emulator -avd <avd_name>`
+* in project root terminal: `npx react-native run-android`
 
 ## Possible errors
 
@@ -20,10 +22,6 @@
 * `-> node_modules/react-native-fingerprint-scanner/android/build.gradle`
 * replace this code: `"com.wei.android.lib:fingerprintidentify:${safeExtGet("fingerprintidentify", "1.2.6")}"`
 with this code: `"com.github.uccmawei:FingerprintIdentify:1.2.6"`
-
-### No connected devices error (in case of Android)
-* `-> Android Studio terminal`
-* run the emulator with: `emulator -avd <avd_name>`
 
 ### Error with FlipperPlatformWebSocket (in case of iOS)
 * `-> ios/Podfile`
