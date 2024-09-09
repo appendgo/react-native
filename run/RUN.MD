@@ -1,14 +1,21 @@
+### Install packages
+
 * `yarn install --frozen-lockfile`
 * `cd ios`
 * `bundle install`
 * `bundle exec pod install`
 * `cd ..`
 
-### iOS
+### Generate bundle
+
+* iOS: `npx react-native bundle --platform ios --dev false --entry-file index.js --bundle-output ios/main.jsbundle --assets-dest ios`
+* Android: `npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res`
+
+### Run iOS
 
 * `npx react-native run-ios --simulator="iPhone 12 mini"`
 
-### Android
+### Run Android
 
 * `-> Android Studio terminal`
 * run the emulator with: `emulator -avd <avd_name>`
@@ -27,8 +34,3 @@ with this code: `"com.github.uccmawei:FingerprintIdentify:1.2.6"`
 * comment out this line: `:flipper_configuration => FlipperConfiguration.enabled`
 * `cd ios`
 * `bundle exec pod install`
-
-### Error with main.jsbundle
-* Error message: ios/main.jsbundle : No such file or directory
-* in case of iOS: `npx react-native bundle --platform ios --dev false --entry-file index.js --bundle-output ios/main.jsbundle --assets-dest ios`
-* in case of android: `npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res`
