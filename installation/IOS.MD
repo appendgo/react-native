@@ -18,19 +18,6 @@ export PATH="/usr/local/opt/ruby@3.0/bin:$PATH"
 export PATH="/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"
 ```
 
-## Cocoapods
-
-- Uninstall existing Cocoapods version (if needed):
-```
-sudo gem uninstall cocoapods -v 1.11.2
-```
-
-- Install specific version of Cocoapods:
-```
-sudo gem install cocoapods -v 1.11.3
-pod --version
-```
-
 ## Xcode
 - Install Xcode from the App Store.
 - Launch Xcode and configure:
@@ -44,7 +31,22 @@ pod --version
 - Navigate to `Open a project or a file`.
 - Select the repository/project's `ios` directory, located at the root level.
 
-## How to Downgrade an Xcode Version
+---
+
+## Cocoapods - DEPRECATED
+
+- Uninstall existing Cocoapods version (if needed):
+```
+sudo gem uninstall cocoapods -v 1.11.2
+```
+
+- Install specific version of Cocoapods:
+```
+sudo gem install cocoapods -v 1.11.3
+pod --version
+```
+
+## How to Downgrade an Xcode Version - DEPRECATED
 - Example: Downgrading from Xcode 14.3 to Xcode 14.2.
 1. Download the required version from [Apple Developer Downloads](https://developer.apple.com/download/more).
 2. Extract the downloaded file:
