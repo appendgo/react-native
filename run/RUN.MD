@@ -1,7 +1,6 @@
 * `yarn install --frozen-lockfile`
 * `cd ios`
 * `bundle install`
-* `sudo xcode-select --switch /Applications/Xcode.app`
 * `bundle exec pod install`
 * `cd ..`
 
