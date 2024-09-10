@@ -4,7 +4,7 @@
 * *(`yarn cache clean --all`)*
 * `yarn install --frozen-lockfile`
 * `cd ios`
-* (`rm -rf Pods`)
+* *(`rm -rf Pods`)*
 * `bundle install`
 * `bundle exec pod install`
 * `cd ..`
