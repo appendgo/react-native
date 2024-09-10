@@ -1,6 +1,7 @@
 ### Install packages
 
 * (`rm -rf node_modules`)
+* (`yarn cache clean --all`)
 * `yarn install --frozen-lockfile`
 * `cd ios`
 * (`rm -rf Pods`)
