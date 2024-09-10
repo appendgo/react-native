@@ -1,7 +1,9 @@
 ### Install packages
 
+* (`rm -rf node_modules`)
 * `yarn install --frozen-lockfile`
 * `cd ios`
+* (`rm -rf Pods`)
 * `bundle install`
 * `bundle exec pod install`
 * `cd ..`
