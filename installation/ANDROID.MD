@@ -6,7 +6,7 @@
 
 ## OpenJDK
 
-* `brew install --cask temurin@11`
+* `brew install --cask zulu@17`
 * `java --version`
 
 ## Android Studio
