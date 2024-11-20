@@ -23,6 +23,12 @@
 * `git config --global user.email "eparis@atlassian.com"`
 * [Github desktop](https://desktop.github.com) - recommended
 
+## Create /usr/local/bin Directory
+
+* `sudo mkdir /usr/local/bin`
+* `sudo chmod 755 /usr/local/bin`
+* `ls -hal /usr/local`
+
 ## NVM
 
 * `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh |bash`
