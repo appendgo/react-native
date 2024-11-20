@@ -24,7 +24,7 @@
 ## NVM
 
 * `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh |bash`
-* `nvm --version` *(in a new terminal window)*
+* `nvm --version` **(in a new terminal window)**
 * `nvm list`
 * `nvm install 16.20.0`
 * `nvm use 16.20.0`
