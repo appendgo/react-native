@@ -40,7 +40,7 @@
 
 ## NVM - SYMLINK
 
-* `ln -s $(which node) /usr/local/bin/node`
+* `sudo ln -s $(which node) /usr/local/bin/node`
 
 ## Yarn
 
